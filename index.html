@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venta de boletos Panama</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Evento unico Panamá</h1>
+            <h2>Concierto en el Estadio Roberto Duran</h2>
+        </header>
+
+        <main>
+            <section class="ticket-form">
+                <h3>Registro de Venta</h3>
+                <form id="ticketForm">
+                    <div class="form-group">
+                        <label for="clientName">Nombre del cliente:</label>
+                        <input type="text" id="clientName" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="ticketCategory">Categoria de los Boletos:</label>
+                        <select id="ticketCategory" required>
+                            <option value="">¿En que categoria se inscribira?</option>
+                            <option value="vip">Puestos VIP = $50.00</option>
+                            <option value="butacas">Puestos Butacas = $30.00</option>
+                            <option value="generales">Puestos Generales = $15.00</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="ticketQuantity">Cantidad de boletos:</label>
+                        <input type="number" id="ticketQuantity" min="1" required>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" id="addSale">Agregar Venta</button>
+                   
+                    </div>
+                </form>
+            </section>
+
+            <section class="sales-summary">
+                <h3>Resumen de ventas</h3>
+                <div class="summary-container">
+                    <div class="total-summary">
+                        <h4>Total general</h4>
+                        <div class="summary-item">
+                            <span>Total de vendidos:</span>
+                            <span id="totalTickets">0</span>
+                        </div>
+                        <div class="summary-item">
+                            <span>Total:</span>
+                            <span id="totalAmount">$0.00</span>
+                        </div>
+                    </div>
+
+                    <div class="category-summary">
+                        <h4>Ventas por categoria</h4>
+                        <div class="category-item">
+                            <span>VIP:</span>
+                            <span id="vipSummary">0 boletos - $0.00</span>
+                        </div>
+                        <div class="category-item">
+                            <span>Butacas:</span>
+                            <span id="butacasSummary">0 boletos - $0.00</span>
+                        </div>
+                        <div class="category-item">
+                            <span>Generales:</span>
+                            <span id="generalesSummary">0 boletos - $0.00</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="sales-list">
+                <h3>Ventas registradas</h3>
+                <div id="salesTableContainer">
+                    <table id="salesTable">
+                        <thead>
+                            <tr>
+                                <th>Cliente</th>
+                                <th>Categoria</th>
+                                <th>Cantidad</th>
+                                <th>Total</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="salesTableBody">
+                            <!-- Las ventas se agregarán aquí dinámicamente -->
+                        </tbody>
+                    </table>
+                    <p id="noSalesMessage" class="no-data">No hay ventas registradas</p>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; patrocinado por LAI2-30, Inc. </p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
